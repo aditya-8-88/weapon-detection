@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chats</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Rubik:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header></header>
+  <main>
+    <div class="bg">
+      
+      <!-- create background effect -->
+    </div>
+    <div class="mobile">
+      <div class="mobile-display">
+        <div class="md-header">
+          <div class="md-notch"> </div>
+          <div class="profile">
+            <div class="profile-exit-icon" style="color: white;">
+              <img src=" {% static 'images/back.webp' %} " alt="">
+            </div>
+            <div class="profile-photo"> <img src=" {% static '/images/avatar.jpg' %} " alt="img" class="profile-photo"></div>
+              <div class="info-align">
+                <div class="profile-info">
+                  <h3>Shashank</h3>
+                  <h6>online</h6>
+                </div>
+                <div class="profile-menu">
+                  <img src="{% static '/images/menu.png' %}" alt="">
+                </div>
+              </div>
+          </div>
+        </div>
+        <!-- upper portion completed -->
+        <!-- continuing to the main body portion -->
+
+        
+        <div class="md-body">
+          <!--
+          <div class="message-in">That sounds great. i'd be happy to discuss more.</div>
+          <div class="message-in">Could you send over some pictures of your dog,please?</div>
+          <div class="photo-out">
+            <img src="{% static 'images/dog-image-1.jpg' %}" alt="1"> <img src="{% static 'images/dog-image-2.jpg' %}" alt="2"> <img src="{% static 'images/dog-image-3.jpg' %}" alt="3">
+          </div>
+          <div class="try-flex">
+            <div class="message-out-1">
+              Here are a few pictures. She's a happy girl!
+            </div>
+          </div> 
+          <div class="try-flex">
+            <div class="message-out-2"> Can you make it?</div>
+          </div>
+          <div class="message-in">She looks so happy ! The time we discussed works. How long shall I take her out for?</div>
+          <div class="message-special"> 
+            <img src="{% static 'images/bullet-pt.jpg' %}" alt="">
+            <div class="ms-text">30 minute walk</div>
+            <div class="ms-cost" style="margin-left: 30px; font-weight: 700;">$29</div>
+          </div>
+          <div class="message-special">
+            <img src="{% static 'images/bullet-pt.jpg' %}" alt=""> 
+            <div class="ms-text">1 hour walk  </div>
+            <div class="ms-cost" style="margin-left: 50px; font-weight: 700;">$49</div>
+          </div>
+        -->
+        {% for msg in msgs %}  
+            <div class="try-flex">
+              <div class="message-out-1" style = 'width:80%'>
+                {{ msg }}
+              </div>
+            </div> 
+        {% endfor %}
+
+          <div class="type-message">
+            <div class="tm-text">
+              <form action="sent" method="post" class="form">
+                {% csrf_token %}  
+                <input type="text" name="msg" id="id_msg" class="filling" style="width:240px;font-size:14pt;">
+                <!-- <input type="submit" value="msg" lable = ""> -->
+                </div>
+                <div class="send-img" >
+                  <button type="submit" action="sent">
+                    <img src="{% static 'images/send-botton -2.png' %}" alt="">
+                  </button> 
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="heading">Simple booking</div>
+      <div class="discription">Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangments and make bookings. Once the walk hab been completed you can rate your walker and book again all through the chat.</div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>
