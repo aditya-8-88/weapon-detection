@@ -1,7 +1,0 @@
-beautifulsoup4
-requests
-lxml
-scikit-learn
-tensorflow
-pandas
-numpy
